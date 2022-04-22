@@ -100,7 +100,7 @@ body {
   overflow-x: hidden;
   width: 90%;
   height: 70%;
-  top: 100px;
+  top: 20px;
   flex: auto;
   align-self: stretch;
   flex-grow: 0;
