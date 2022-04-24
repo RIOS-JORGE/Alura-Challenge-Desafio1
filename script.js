@@ -18,7 +18,11 @@ let letraU = "ufat";
 // funciones
 
 let encriptar = function () {
-  if (input.value == "") {
+  let validarExpR = input.value.replace(/[A-ZÁÉÍÓÚáéíóú]/g,"false");
+  let r = /false/g.test(validarExpR);
+  
+
+  if (input.value == "" || true == r) {
     mensajeEncontrado.textContent = "Ingrese un texto";
     mensajeEncontrado.className = "mensajeEncontrado";
     ingresaTexto.textContent =
@@ -29,11 +33,11 @@ let encriptar = function () {
   } else {
     let textoEncriptado = input.value;
 
-    textoEncriptado = textoEncriptado.replace(/e/gi, letraE);
-    textoEncriptado = textoEncriptado.replace(/i/gi, letraI);
-    textoEncriptado = textoEncriptado.replace(/a/gi, letraA);
-    textoEncriptado = textoEncriptado.replace(/o/gi, letraO);
-    textoEncriptado = textoEncriptado.replace(/u/gi, letraU);
+    textoEncriptado = textoEncriptado.replace(/e/g, letraE);
+    textoEncriptado = textoEncriptado.replace(/i/g, letraI);
+    textoEncriptado = textoEncriptado.replace(/a/g, letraA);
+    textoEncriptado = textoEncriptado.replace(/o/g, letraO);
+    textoEncriptado = textoEncriptado.replace(/u/g, letraU);
 
     mensajeEncontrado.textContent = textoEncriptado;
     mensajeEncontrado.className = "mensajeEncriptado";
@@ -48,7 +52,10 @@ let encriptar = function () {
 };
 
 let desencriptar = function () {
-  if (input.value == "") {
+  let validarExpR = input.value.replace(/[A-ZÁÉÍÓÚáéíóú]/g,"false");
+  let r = /false/g.test(validarExpR);
+
+  if (input.value == "" || true == r) {
     mensajeEncontrado.textContent = "Ingrese un texto";
     mensajeEncontrado.className = "mensajeEncontrado";
     ingresaTexto.textContent =
